@@ -1,0 +1,14 @@
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor / IDE
+.vs/
+.idea/
+*.swp
+*.swo
+
+# PowerShell session
+*.ps1xml
