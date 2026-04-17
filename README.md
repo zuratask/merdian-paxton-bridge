@@ -1,6 +1,8 @@
-# NET2 Sync
+# Merdian Paxton Bridge
 
-PowerShell WinForms UI prototype for CSV drops, NET2 SQL checks, and renewals (mock data only; no real database yet).
+CSV drops, Paxton NET2 checks, and renewals — PowerShell WinForms UI prototype (mock data only; no real database yet).
+
+**Repository:** https://github.com/zuratask/merdian-paxton-bridge
 
 ## Run
 
@@ -18,25 +20,24 @@ On older Windows, if downloads fail with SSL errors, run once in PowerShell befo
 
 ## Git and GitHub CLI (this machine)
 
-Git for Windows and GitHub CLI (`gh`) can be installed under:
+Git for Windows and GitHub CLI (`gh`) are typically installed at:
 
 - `C:\Program Files\Git\cmd\git.exe`
 - `C:\Program Files\GitHub CLI\gh.exe`
 
-This repo is already initialized with `main` and an initial commit. To **create the repository on GitHub and push** (one-time login):
+To clone:
 
 ```powershell
-cd "c:\Users\Administrator\Downloads\N2SYNC"
-gh auth login
-gh repo create net2-sync --public --source=. --remote=origin --push
+git clone https://github.com/zuratask/merdian-paxton-bridge.git
 ```
 
-Change `net2-sync` if the name is taken. If the repo already exists on GitHub instead:
+To push after changes:
 
 ```powershell
-gh auth login
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
+cd merdian-paxton-bridge
+git add -A
+git commit -m "Your message"
+git push
 ```
 
-Use HTTPS and a [personal access token](https://github.com/settings/tokens) when Git asks for a password, or complete `gh auth login` with the browser/device flow.
+If you use a new machine, sign in once with `gh auth login` or configure HTTPS credentials with a [personal access token](https://github.com/settings/tokens).

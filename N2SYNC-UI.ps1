@@ -1,4 +1,4 @@
-# NET2 Sync - CSV to NET2 (UI prototype: mock data only, no database)
+# Merdian Paxton Bridge - CSV to Paxton NET2 (UI prototype: mock data only, no database)
 # Run: powershell -ExecutionPolicy Bypass -File ".\N2SYNC-UI.ps1"
 
 Add-Type -AssemblyName System.Windows.Forms
@@ -158,7 +158,7 @@ function Add-HistoryEntry {
 
 # --- Form ---
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "NET2 Sync"
+$form.Text = "Merdian Paxton Bridge"
 $form.Size = New-Object System.Drawing.Size(1160, 760)
 $form.MinimumSize = New-Object System.Drawing.Size(920, 580)
 $form.StartPosition = "CenterScreen"
@@ -169,14 +169,14 @@ $lblTitle.AutoSize = $true
 $lblTitle.Location = New-Object System.Drawing.Point(16, 14)
 $lblTitle.Font = New-Object System.Drawing.Font("Segoe UI", 18, [System.Drawing.FontStyle]::Bold)
 $lblTitle.ForeColor = $script:Ui.Text
-$lblTitle.Text = "NET2 Sync"
+$lblTitle.Text = "Merdian Paxton Bridge"
 
 $lblSub = New-Object System.Windows.Forms.Label
 $lblSub.AutoSize = $true
 $lblSub.Location = New-Object System.Drawing.Point(16, 46)
 $lblSub.ForeColor = $script:Ui.Muted
 $lblSub.Font = New-Object System.Drawing.Font("Segoe UI", 9.25)
-$lblSub.Text = "CSV drops, NET2 checks, renewals - prototype UI (mock data only)."
+$lblSub.Text = "CSV drops, Paxton NET2 checks, renewals - bridge UI (mock data only)."
 
 $pnlAccent = New-Object System.Windows.Forms.Panel
 $pnlAccent.Location = New-Object System.Drawing.Point(16, 70)
@@ -390,7 +390,7 @@ $lblSupTitle.AutoSize = $true
 $lblSupTitle.Font = New-Object System.Drawing.Font("Segoe UI", 12, [System.Drawing.FontStyle]::Bold)
 $lblSupTitle.ForeColor = $script:Ui.Text
 $lblSupTitle.Location = New-Object System.Drawing.Point(16, 18)
-$lblSupTitle.Text = "About NET2 Sync"
+$lblSupTitle.Text = "About Merdian Paxton Bridge"
 
 $lblSupBody = New-Object System.Windows.Forms.Label
 $lblSupBody.AutoSize = $false
@@ -398,7 +398,7 @@ $lblSupBody.Location = New-Object System.Drawing.Point(16, 52)
 $lblSupBody.Size = New-Object System.Drawing.Size(720, 220)
 $lblSupBody.ForeColor = $script:Ui.Text
 $lblSupBody.Font = New-Object System.Drawing.Font("Segoe UI", 9.25)
-$lblSupBody.Text = "This build is a front-end prototype: log entries and NET2 connectivity are simulated.`r`n`r`nBefore production you will need a secure watch folder, a defined CSV layout, NET2 SQL access that matches your IT policy, tested renewals in a sandbox, and backups.`r`n`r`nFor deployment help, contact your administrator or integration partner."
+$lblSupBody.Text = "Merdian Paxton Bridge is a front-end prototype: log entries and NET2 connectivity are simulated.`r`n`r`nBefore production you will need a secure watch folder, a defined CSV layout, NET2 SQL access that matches your IT policy, tested renewals in a sandbox, and backups.`r`n`r`nFor deployment help, contact your administrator or integration partner."
 
 $tabSupport.Controls.AddRange(@($lblSupTitle, $lblSupBody))
 
