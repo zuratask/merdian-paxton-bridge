@@ -1,0 +1,6 @@
+{
+  "SqlServer": ".\\NET2",
+  "SqlDatabase": "Net2",
+  "WatchFolder": "D:\\Inbound\\NET2Sync\\",
+  "FilePattern": "*.csv"
+}

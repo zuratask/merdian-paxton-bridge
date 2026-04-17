@@ -12,3 +12,6 @@ $RECYCLE.BIN/
 
 # PowerShell session
 *.ps1xml
+
+# Local NET2 / CSV paths for -CursorReport (do not commit)
+N2SYNC.local.json
