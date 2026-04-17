@@ -10,20 +10,33 @@ powershell -ExecutionPolicy Bypass -File ".\N2SYNC-UI.ps1"
 
 Requires Windows with PowerShell 5.1+ and .NET Framework (WinForms).
 
-## Publish to GitHub (on a machine with Git)
+On older Windows, if downloads fail with SSL errors, run once in PowerShell before `Invoke-WebRequest`:
 
-1. Install [Git for Windows](https://git-scm.com/download/win) if needed.
-2. On GitHub: **New repository** (e.g. `net2-sync`), leave “Initialize with README” unchecked if you already have this folder.
-3. In this directory:
+```powershell
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+```
+
+## Git and GitHub CLI (this machine)
+
+Git for Windows and GitHub CLI (`gh`) can be installed under:
+
+- `C:\Program Files\Git\cmd\git.exe`
+- `C:\Program Files\GitHub CLI\gh.exe`
+
+This repo is already initialized with `main` and an initial commit. To **create the repository on GitHub and push** (one-time login):
 
 ```powershell
 cd "c:\Users\Administrator\Downloads\N2SYNC"
-git init
-git add .
-git commit -m "Initial commit: NET2 Sync UI prototype"
-git branch -M main
+gh auth login
+gh repo create net2-sync --public --source=. --remote=origin --push
+```
+
+Change `net2-sync` if the name is taken. If the repo already exists on GitHub instead:
+
+```powershell
+gh auth login
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 git push -u origin main
 ```
 
-Replace `YOUR_USERNAME` / `YOUR_REPO` with your GitHub user and repository name. Use a [personal access token](https://github.com/settings/tokens) as the password when Git prompts for credentials, or sign in with GitHub CLI (`gh auth login`).
+Use HTTPS and a [personal access token](https://github.com/settings/tokens) when Git asks for a password, or complete `gh auth login` with the browser/device flow.
